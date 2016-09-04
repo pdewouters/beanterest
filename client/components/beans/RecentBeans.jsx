@@ -16,7 +16,7 @@ class RecentBeans extends Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
         <h1>Recent beans</h1>
         <BeanGrid
         beans={this.props.beans}

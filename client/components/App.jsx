@@ -6,12 +6,14 @@ export default (props) => {
   return (
     <div>
       <Header />
-      {
-        Meteor.userId() !== null
-        ? <AddBean />
-        : ''
-      }
-      {props.children}
+      <div className="container">
+        {
+          Meteor.userId() !== null
+          ? <AddBean />
+          : ''
+        }
+        {props.children}
+      </div>
     </div>
   )
 }

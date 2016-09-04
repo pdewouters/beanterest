@@ -42,26 +42,29 @@ class AddBean extends Component {
 
   render() {
     return (
-      <div>
-        <label>
-          Add a cool image of beans:
+      <div className="row">
+        <div class="form-group">
+          <label>Add a cool image of beans:</label>
           <input
+          className="form-control"
           type="url"
           value={this.state.imageUrl}
           onChange={(e) => this.handleOnUrlChange(e)}
           //onPaste={(e) => this.handleOnPaste(e)}
           />
-        </label>
-        <label>
-          Title:
+        </div>
+        <div class="form-group">
+          <label>title:</label>
           <input
+            className="form-control"
             type="text"
             value={this.state.title}
             onChange={(e) => this.handleOnTitleChange(e)}
           />
-        </label>
+        </div>
         <input
         type="button"
+        className="btn btn-primary"
         value="Add image"
         onClick={() => this.handleClick()}
         />

@@ -8,18 +8,18 @@ class Header extends Component {
   }
   render() {
     return (
-      <nav className="nav navbar-default">
-        <div className="navbar-header">
+      <nav className="navbar navbar-dark bg-inverse">
+        <div className="container">
           <Link to="/" className="navbar-brand">Beanterest</Link>
+          <ul className="nav navbar-nav">
+            {
+              this.isUserLoggedIn()
+              ? <li className="nav-item"><Link className="nav-link" to="/mybeans">My beans</Link></li>
+              : ''
+            }
+          </ul>
+          <div className="pull-xs-right"><Accounts /></div>
         </div>
-        <ul className="nav navbar-nav">
-          <li><Accounts /></li>
-          {
-            this.isUserLoggedIn()
-            ? <Link to="/mybeans">My beans</Link>
-            : ''
-          }
-        </ul>
       </nav>
     );
   }
