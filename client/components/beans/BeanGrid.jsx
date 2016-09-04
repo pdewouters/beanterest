@@ -27,12 +27,21 @@ class BeanGrid extends Component {
             }
             {
               this.props.showLike
-              ? <input className="btn btn-secondary" type="button" value="❤" onClick={(beanId) => this.handleLike(bean._id)} />
+              ? <input className="btn btn-secondary" type="button" value="❤" onClick={(b) => this.handleLike(bean)} />
               : null
+            }
+            {
+              bean.likedBy && bean.likedBy.length > 0
+              ? <span className="pull-xs-right">{`${bean.likedBy.length} likes`}</span>
+              : ''
             }
           </div>
       </div>
     );
+  }
+
+  handleLike(bean) {
+    this.props.handleLikeBean(bean);
   }
 
   handleDelete(beanId) {

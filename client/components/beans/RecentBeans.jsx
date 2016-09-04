@@ -14,6 +14,12 @@ class RecentBeans extends Component {
     this.page += 1;
   }
 
+  handleLikeBean(bean) {
+    Meteor.call('bean.like', bean, (err,result) => {
+      console.log(result);
+    })
+  }
+
   render() {
     return (
       <div className="row">
@@ -23,6 +29,7 @@ class RecentBeans extends Component {
         handleLoadMore={this.handleLoadMore}
         showDelete={false}
         showLike={true}
+        handleLikeBean={this.handleLikeBean}
         />
       </div>
     );

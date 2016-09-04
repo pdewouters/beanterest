@@ -16,7 +16,7 @@ class AddBean extends Component {
     });
   }
 
-    handleOnTitleChange(e) {
+  handleOnTitleChange(e) {
     this.setState({
       title: e.target.value
     });
@@ -26,6 +26,7 @@ class AddBean extends Component {
     const bean = {
       imageUrl: this.state.imageUrl,
       title: this.state.title,
+      likedBy: []
     }
     Meteor.call('beans.insert', bean);
     this.setState({
@@ -34,16 +35,10 @@ class AddBean extends Component {
     })
   }
 
-  // handleOnPaste(e) {
-  //   this.setState({
-  //     imageUrl: e.clipboardData.getData('Text')
-  //   });
-  // }
-
   render() {
     return (
       <div className="row">
-        <div class="form-group">
+        <div className="form-group">
           <label>Add a cool image of beans:</label>
           <input
           className="form-control"
@@ -53,7 +48,7 @@ class AddBean extends Component {
           //onPaste={(e) => this.handleOnPaste(e)}
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label>title:</label>
           <input
             className="form-control"
