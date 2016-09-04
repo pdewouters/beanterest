@@ -15,11 +15,23 @@ class UserBeans extends Component {
     this.page += 1;
   }
 
+  handleLikeBean(bean) {
+    Meteor.call('bean.like', bean, (err,result) => {
+      console.log(result);
+    })
+  }
+
   render() {
     return (
-      <div>
+      <div className="row">
         <h1>{this.props.params.username} beans</h1>
-        <BeanGrid beans={this.props.beans} handleLoadMore={this.handleLoadMore} showDelete={false} showLike={true} />
+        <BeanGrid
+        beans={this.props.beans}
+        handleLoadMore={this.handleLoadMore}
+        showDelete={false}
+        showLike={true}
+        handleLikeBean={this.handleLikeBean}
+        />
       </div>
     );
   }
