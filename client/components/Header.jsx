@@ -4,7 +4,7 @@ import { Link, browserHistory } from 'react-router';
 
 class Header extends Component {
    isUserLoggedIn() {
-    return Meteor.userId !== null;
+    return Meteor.userId() !== null;
   }
   render() {
     return (

@@ -6,7 +6,7 @@ import BeanGrid from './BeanGrid';
 const PER_PAGE = 20;
 class MyBeans extends Component {
   isUserLoggedIn() {
-    return Meteor.userId !== null;
+    return Meteor.userId() !== null;
   }
 
   handleDelete(beanId) {

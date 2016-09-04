@@ -21,12 +21,12 @@ class BeanGrid extends Component {
             <Link to={{pathname: `/users/${screenName}`}}>{screenName}</Link>
             </p>
             {
-              this.props.showDelete && Meteor.userId !== null
+              this.props.showDelete && Meteor.userId() !== null
               ? <input className="btn btn-danger" type="button" value="Delete" onClick={(beanId) => this.handleDelete(bean._id)} />
               : null
             }
             {
-              this.props.showLike && Meteor.userId !== null
+              this.props.showLike && Meteor.userId() !== null
               ? <input className="btn btn-secondary" type="button" value="❤" onClick={(b) => this.handleLike(bean)} />
               : null
             }

@@ -7,7 +7,7 @@ import { withRouter } from 'react-router';
 const PER_PAGE = 20;
 class UserBeans extends Component {
   isUserLoggedIn() {
-    return Meteor.userId !== null;
+    return Meteor.userId() !== null;
   }
 
   handleLoadMore() {
