@@ -81,7 +81,7 @@ BeanGrid.propTypes = {
   handleDelete: PropTypes.func,
 };
 
-export default createContainer(() => {
+export default createContainer((props) => {
   const subscription = Meteor.subscribe('allUsers');
   const loading = !subscription.ready();
   const users = Meteor.users.find({}).fetch();
