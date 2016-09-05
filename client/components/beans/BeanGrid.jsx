@@ -57,17 +57,17 @@ class BeanGrid extends Component {
     return (
       <div>
         <div className="row">
-        <div className=" card-columns">
+          <div className=" card-columns">
             {cards}
-            </div>
+          </div>
         </div>
         <div className="row">
-          <button
-            onClick={this.handleButtonClick}
+          <input
+            type="button"
+            onClick={() => this.handleButtonClick()}
             className="btn btn-primary"
-          >
-              Load more...
-          </button>
+            value="Load more..."
+          />
         </div>
       </div>
     );
@@ -79,6 +79,7 @@ BeanGrid.propTypes = {
   showLike: PropTypes.bool.isRequired,
   handleButtonClick: PropTypes.func,
   handleDelete: PropTypes.func,
+  handleLoadMore: PropTypes.func.isRequired
 };
 
 export default createContainer((props) => {
